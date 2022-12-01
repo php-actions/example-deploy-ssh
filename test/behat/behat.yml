@@ -1,0 +1,13 @@
+default:
+  suites:
+    default:
+      serverAddress: 0.0.0.0
+      serverPort: 8080
+      contexts:
+        - FeatureContext:
+
+
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://localhost:8080
+      goutte: ~

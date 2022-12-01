@@ -1,0 +1,23 @@
+{
+	"name": "php-actions/example-deploy-ssh",
+	"description": " An example project that uses php-actions/deploy-ssh",
+	"require": {
+		"phpgt/webengine": "dev-master"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^v9.5",
+		"behat/behat": "^3.11",
+		"friends-of-behat/mink-extension": "^v2",
+		"behat/mink-goutte-driver": "^v2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Example\\": "./class"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Example\\Test\\": "./test/phpunit"
+		}
+	}
+}
