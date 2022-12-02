@@ -69,4 +69,4 @@ jobs:
           hostname: example-deploy-ssh.php-actions.g105b.com
           user: php-actions-deploy-ssh
           path: /var/www/example-deploy-ssh
-          ssh_key: ${{ secrets.ssh_key }}
+          ssh_key: ${{ secrets.deploy_ssh_key }}
