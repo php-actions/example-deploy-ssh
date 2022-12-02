@@ -66,7 +66,7 @@ jobs:
       - uses: php-actions/deploy-ssh@wip
         with:
           # deploy to a subdomain of my personal website (g105b.com)
-          hostname: example-deploy-ssh.php-actions.g105b.com
+          hostname: deploy-endpoint.example-deploy-ssh.php-actions.g105b.com
           user: deploy
           path: /var/www/example-deploy-ssh
           ssh_key: ${{ secrets.deploy_ssh_key }}
