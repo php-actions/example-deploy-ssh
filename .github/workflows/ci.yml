@@ -67,6 +67,6 @@ jobs:
         with:
           # deploy to a subdomain of my personal website (g105b.com)
           hostname: example-deploy-ssh.php-actions.g105b.com
-          user: php-actions-deploy-ssh
+          user: deploy
           path: /var/www/example-deploy-ssh
           ssh_key: ${{ secrets.deploy_ssh_key }}
