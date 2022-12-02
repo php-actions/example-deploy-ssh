@@ -1,4 +1,4 @@
-An example project that uses [php-actions/deploy](https://github.com/php-actions/deploy)
+An example project that uses [php-actions/deploy-ssh](https://github.com/php-actions/deploy-ssh)
 ========================================================================================
 
 > **THIS IS CURRENTLY WORK IN PROGRESS** - once v1 is released there will be no more major changes.
