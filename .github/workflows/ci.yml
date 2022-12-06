@@ -69,4 +69,5 @@ jobs:
           hostname: deploy-endpoint.example-deploy-ssh.php-actions.g105b.com
           user: deploy
           path: /var/www/example-deploy-ssh
+          path_owner: www-data.
           ssh_key: ${{ secrets.deploy_ssh_key }}
