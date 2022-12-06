@@ -9,11 +9,16 @@ The functionality of this project is a simple "Hello, you!" greeter, where the u
 
 The deployment is made to `example-deploy-ssh.php-actions.g105b.com`, which is set up to serve the `www.` subdomain to the latest release (on its own server), and all branches to the `branch_name.dev.` subdomain (on a staging server). This emulates the common usage of having http://master.dev.example.com as the latest bleeding-edge test, http://feature-branch.dev.example.com for testing individual features, and of course http://www.example.com for the latest release.
 
+Branches
+--------
+
++ `red` - this one has a red background!
+
 TODO: 
 + [x] Make a basic project with some tests
 + [x] Add the deploy action, dependent on tests
-+ [ ] Test that if tests fail, deploy doesn't happen
-+ [ ] Check what happens on remote server
++ [x] Test that if tests fail, deploy doesn't happen
++ [x] Check what happens on remote server
 + [ ] COMPLETE!
 
 Digital Ocean
