@@ -13,7 +13,6 @@ Branches
 --------
 
 + `red` - this one has a red background!
-+ `cfg` - this one has an injected config variable
 
 TODO: 
 + [x] Make a basic project with some tests
