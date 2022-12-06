@@ -2,6 +2,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale:1" />
 <title>Example greeter!</title>
+<style>
+output {
+	display:block;
+	padding-top:2rem;
+	font-size:0.75rem;
+	opacity:0.5;
+}
+</style>
 
 <h1>Hello, <span data-bind:text="your-name">you</span>!</h1>
 
@@ -13,4 +21,5 @@
 	<button name="do" value="greet">Greet!</button>
 </form>
 
-<output data-bind:text="configMessage" style="display:block;padding-top:12rem;font-size:0.75rem;opacity:0.5"></output>
+<output data-bind:text="configSecret">Secret message will go here!</output>
+<output data-bind:text="configMessage"></output>

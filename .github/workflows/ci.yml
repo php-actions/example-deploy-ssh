@@ -63,6 +63,12 @@ jobs:
       - name: Extract build archive
         run: tar -xvf /tmp/github-actions/build.tar ./
 
+      - name: Generate config value from Github Secret
+        run: ./vendor/bin/config-generate deploy example.secret="${{ secrets.example_secret }}"
+
+      - name: Inject branch name into Config
+        run: ./vendor/bin/config-generate deploy example.test_key="The branch is ${{ github.ref_name }}"
+
       - uses: php-actions/deploy-ssh@wip
         with:
           # deploy to a subdomain of my personal website (g105b.com)

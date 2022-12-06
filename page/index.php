@@ -10,6 +10,7 @@ function go(Session $session, DocumentBinder $binder, Config $config):void {
 		$binder->bindKeyValue("your-name", $name);
 	}
 
+	$binder->bindKeyValue("configSecret", $config->getString("example.secret"));
 	$binder->bindKeyValue("configMessage", $config->getString("example.test_key"));
 }
 

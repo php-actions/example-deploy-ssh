@@ -12,18 +12,31 @@ The deployment is made to `example-deploy-ssh.php-actions.g105b.com`, which is s
 Branches
 --------
 
-+ `red` - this one has a red background!
-+ `cfg` - this one has an injected config variable
+The [`ci.yml`][ci] config runs for every push to any branch. This means that every branch will be deployed by default, due to the use of `on: [push]`. This part of the config can be made more complex by [adding rules to match or ignore certain branch names or patterns](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore).
+
+As an example, this repository has a branch called `red`, which deploys to https://red.example-deploy-ssh.php-actions.g105b.com - you can have 10 points if you guess what it does, or you can check the diff to see exactly what is on this branch: https://github.com/php-actions/example-deploy-ssh/compare/master...red
+
+Config & Secrets
+----------------
+
+Most projects require some secret information to be passed as part of the deployment, whether that's API keys, usage tokens, SSH identites, etc. this data can't be placed in a file in the repository, otherwise it may be seen by other people on the team, or on the internet.
+
+This example project uses [php.gt/config][config] to manage the project configuration. By default, the [config.ini][config.ini] file contains an example test key, but doesn't include any secret message.
+
+The [ci.yml][ci] has two steps in it called `Generate config value from Github Secret` and `Inject branch name into Config` as examples of how this kind of secret information and config management can be handled.
+
+As part of the deployment process, just before the files are transferred to the remote server, a secret is injected into the config, and a message containing the current branch name is injected over the top of the existing `test_key`.
+
+This means that if you check the [master deployment](https://master.example-deploy-ssh.php-actions.g105b.com), you'll see the secret value on the page, and if you check [another branch's deployment](https://red.example-deploy-ssh.php-actions.g105b.com), you'll see that the branch name has been successfully injected at deploy time.
 
 TODO: 
-+ [x] Make a basic project with some tests
-+ [x] Add the deploy action, dependent on tests
-+ [x] Test that if tests fail, deploy doesn't happen
-+ [x] Check what happens on remote server
-+ [ ] COMPLETE!
 
-Digital Ocean
+Digital Ocean production deployment
 
 + [ ] Use official doctl to handle production releases onto fresh server
 + [ ] Smoke test new server to check it's deployed correctly
 + [ ] Automatically cull old production server after new one's smoke test is passing
+
+[ci]: https://github.com/php-actions/example-deploy-ssh/blob/master/.github/workflows/ci.yml
+[config]: https://php.gt/config
+[config.ini]: https://github.com/php-actions/example-deploy-ssh/blob/master/config.ini
