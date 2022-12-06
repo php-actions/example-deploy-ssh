@@ -64,7 +64,7 @@ jobs:
         run: tar -xvf /tmp/github-actions/build.tar ./
 
       - name: Generate config value from Github Secret
-        run: ./vendor/bin/config-generate deploy example.secret=${{ secrets.example_secret }}
+        run: ./vendor/bin/config-generate deploy example.secret="${{ secrets.example_secret }}"
 
       - name: Inject branch name into Config
         run: ./vendor/bin/config-generate deploy example.test_key="The branch is ${{ github.ref_name }}"
